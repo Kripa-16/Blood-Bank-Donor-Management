@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Supply Blood</title>
+     <link rel="stylesheet" href="" th:href="@{/supply.css}">
+     <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+    
+     
+</head>
+<body>
+<nav>
+				<a href="http://localhost:7007">Home</a>
+				<a href="/admin/home">AdminHome</a>
+				<a th:href="@{/DisplayDonorDetails}">DisplayDonorDetails</a>
+				<a th:href="@{/viewBloodStock}">ViewBloodStock</a>
+				<a th:href="@{/supply}">Supply</a>
+				<a th:href="@{/updateDonorDetails}">Update</a>
+				
+	</nav>
+        
+    <h2 align="center">SUPPLY BLOOD</h2>
+    
+    <img src="https://th.bing.com/th/id/OIP.CwvghCj5AHEbDuM_d7epIAHaHZ?pid=ImgDet&w=192&h=192&c=7&dpr=1.5" class="center">
+	
+   
+    <form action="#" th:action="@{/supply}" th:object="${supply}" method="post">
+        <label for="type">Blood Type:</label><br>
+        <input type="text" id="type" name="type" th:field="*{type}"><br>
+        <label for="units">Units:</label><br>
+        <input type="number" id="units" name="units" th:field="*{units}"><br>
+        <input type="submit" value="Supply">
+    </form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/userlogin.css}">
+   
+
+    <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+</head>
+<body>
+<header>
+        <nav>
+            <div >
+                <a href="http://localhost:7007">Home</a>
+                <a href="/adminRegister">New Admin</a>
+                <a href="/adminLog">Existing Admin</a>
+                <a href="/userRegistration">New User</a>
+                <a href="/userLog">Existing User</a>
+                <a href="contact">Contact</a>
+                <a href="nextDonationDate">When I Can Donate</a>
+            </div>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2 class="text-center">Donor Login</h2>
+        <br>
+	<img src="https://cdn-icons-png.flaticon.com/128/1056/1056593.png" class="center">
+	<br>
+	<form th:action="@{/userLog}" th:object="${user}" method="post">
+	    <div class="form-group">
+	        <input th:field="*{username}" type="text" class="form-control" id="username"  placeholder="Username" required>
+	    </div>
+	    <div class="form-group">
+	        <input th:field="*{password}" type="password" class="form-control"  id="password" placeholder="Password" required>
+	    </div>
+	    <button type="submit" class="btn btn-primary btn-block">Login</button>
+	    <br><br>
+	    <button type="button" class="btn btn-secondary btn-block" id="signup">Sign Up</button>
+	</form>
+
+</div>
+   
+</body>
+</html>
+

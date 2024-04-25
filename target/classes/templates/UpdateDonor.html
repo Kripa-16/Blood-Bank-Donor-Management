@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>UpdateDetails</title>
+       
+        <link rel="stylesheet" href="" th:href="@{/updatedonor.css}">
+        <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+</head>
+
+<body>
+    
+    
+    <nav>
+				<a href="http://localhost:7007">Home</a>
+				<a href="/admin/home">AdminHome</a>
+				<a th:href="@{/DisplayDonorDetails}">DisplayDonorDetails</a>
+				<a th:href="@{/viewBloodStock}">ViewBloodStock</a>
+				<a th:href="@{/supply}">Supply</a>
+				<a th:href="@{/updateDonorDetails}">Update</a>
+				
+	</nav>
+    <h2 align="center">UPDATE DONOR DETAILS</h2>
+    
+<table>
+    <thead>
+        <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Mobile number</th>
+                <th>Email Id</th>
+                <th>City</th>
+                <th>Last Donation Date</th>
+                <th>Action</th>
+            
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="dd : ${updatedetails}">
+            <td th:text="${dd.user_id}"></td>
+            <td th:text="${dd.user_fullname}"></td>
+            <td th:text="${dd.Age}"></td>
+            <td th:text="${dd.Gender}"></td>
+            <td th:text="${dd.BloodGroup}"></td>
+            <td th:text="${dd.usermobile}"></td>
+            <td th:text="${dd.user_email}"></td>
+            <td th:text="${dd.City}"></td>
+            <td th:text="${dd.lastDonationDate}"></td>
+            
+            
+           <td style="white-space:nowrap">
+	           <a th:href="@{/updateDonor/{id}(id=${dd.user_id})}">Edit</a>
+	           <a th:href="@{/deleteDonor/{id}(id=${dd.user_id})}">Delete</a>
+           </td>
+           
+           
+           
+
+</tr>
+    </tbody>
+</table>
+
+</body>
+</html>

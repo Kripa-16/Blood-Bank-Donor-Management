@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../images/bg1.png');
+    background-attachment: fixed;
+}
+ 
+
+form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 0, 0, 0.6);
+}
+ 
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+ 
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+ 
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #999;
+    color: #333;
+    border: none;
+    cursor: pointer;
+     border-radius:7px;
+    
+}
+ 
+input[type="submit"]:hover {
+    background-color: #ddd;
+}
+ 
+a {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #333;
+    text-decoration: none;
+    border-radius: 7px;
+}
+ 
+a:hover {
+    background-color: #ddd;
+}
+ nav {
+    background-color: #ff0000; 
+    color: #ffffff; 
+    padding: 10px;
+}
+nav a {
+    background-color: #ff0000; 
+    color: #c0c0c0; /* Changed nav link color to red */
+    text-decoration: none;
+    margin:0 15px;
+}
+h2 {
+    background-color: rgba(255, 0, 0, 0.2);
+    color:#333;
+    font-weight:bold;
+    padding:0;
+    text-align: center;
+}
