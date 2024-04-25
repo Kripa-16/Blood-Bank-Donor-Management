@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/updatedonordetails.css}">
+    <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>    
+     
+</head>
+<body>
+<nav>
+				<a href="http://localhost:7007">Home</a>
+				<a href="/admin/home">AdminHome</a>
+				<a th:href="@{/DisplayDonorDetails}">DisplayDonorDetails</a>
+				<a th:href="@{/viewBloodStock}">ViewBloodStock</a>
+				<a th:href="@{/supply}">Supply</a>
+				<a th:href="@{/updateDonorDetails}">Update</a>				
+	</nav>
+        
+    <h2 align="center">UPDATE DONOR DETAIL</h2>
+    
+    <img src="https://th.bing.com/th/id/OIP.ebpPcpr12EBWkXnfs4fGWgHaHa?w=512&h=512&rs=1&pid=ImgDetMain" class="center">
+	
+          <form th:action="@{/updatedonordetails}" th:object="${updatedonor}"  method="post">
+                    
+               <input type="hidden" id="user_id" th:field="*{user_id}"/>
+                 <input type="hidden" id="username" th:field="*{username}"/>
+                 <input type="hidden" id="user_fullname" th:field="*{user_fullname}"/> 
+               <input type="hidden" id="Age" th:field="*{Age}"/>
+                <input type="hidden" id="Gender" th:field="*{Gender}"/>
+                <input type="hidden" id="BloodGroup" th:field="*{BloodGroup}"/>
+                <input type="hidden" id="password" th:field="*{password}"/>
+                <input type="hidden" id="lastDonationDate" th:field="*{lastDonationDate}"/>
+           
+            <div class="user-box">
+                <input th:field="*{usermobile}" type="text"  class="form-control" placeholder="phone Number" pattern="[789][0-9]{9}" min="10" required />
+            </div>            
+            
+             <div class="user-box">
+                <input  type="text" th:field="*{City}" class="form-control" placeholder="City" required />
+            </div> 
+            
+            <div class="user-box">
+    			<input type="email" th:field="*{user_email}" class="form-control" placeholder="emailid" pattern="^[\\w.+\\-]+@(gmail\\.com|yahoo\\.com)$" required oninvalid="this.setCustomValidity('This field doesn\'t match the format.')" oninput="setCustomValidity('')" title="Please match the required format. (Only gmail.com and yahoo.com are accepted)"/>
+			</div>
+             
+            <!--  <a class="submit"target="_blank" th:href="@{/admin/home}"> Update </a> -->
+             <button class="submit"target="_blank"  >Update</button>
+        </form>
+        
+
+</body>
+
+</html>
+            
+            
+            

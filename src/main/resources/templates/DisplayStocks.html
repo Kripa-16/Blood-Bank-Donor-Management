@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/DisplayStocks.css}">
+    <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+</head>
+<body>
+    <nav>
+				<a href="http://localhost:7007">Home</a>
+				<a href="/admin/home">AdminHome</a>
+				<a th:href="@{/DisplayDonorDetails}">DisplayDonorDetails</a>
+				<a th:href="@{/viewBloodStock}">ViewBloodStock</a>
+				<a th:href="@{/supply}">Supply</a>
+				<a th:href="@{/updateDonorDetails}">Update</a>
+				
+	</nav>
+        
+    <h2 align="center">BLOOD STOCK DETAILS</h2>
+    
+    <img src="https://www.bing.com/th/id/OIP.rsTcwdH2far9awmQT4GrhgAAAA?w=195&h=195&c=7&r=0&o=5&dpr=1.5&pid=1.7" class="center">
+	
+    <br>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Blood Group</th>
+                <th>No OF Units</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="VS : ${viewstock}">
+              
+                <td th:text="${VS.type}"></td>
+                <td th:text="${VS.units}"></td>
+               
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

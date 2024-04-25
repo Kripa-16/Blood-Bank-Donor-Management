@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255); /* Changed background to red */
+}
+ 
+nav {
+    background-color: #ff0000; /* Changed nav background to white */
+    color: #ffffff; /* Changed nav text to red */
+    padding: 10px;
+}
+ 
+nav a {
+    color: #c0c0c0; /* Changed nav link color to red */
+    text-decoration: none;
+    margin:0 15px;
+}
+ 
+.home-container {
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+ 
+.text-center {
+    text-align: center;
+    font-size:30px;	
+    color: #000000; /* Changed text color to white */
+}
+h4 {
+    display: inline-block;
+    margin-top: 10px;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Changed button color to white */
+    color: #ffffff; /* Changed button text color to red */
+    text-decoration: none;
+    border-radius: 4px;
+}
+ 
+h4:hover {
+    background-color: #999; /* Changed hover color to grey */
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

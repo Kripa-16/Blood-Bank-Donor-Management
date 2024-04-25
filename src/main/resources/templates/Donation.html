@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>C</title>
+    <link rel="stylesheet" href="" th:href="@{/donationdate.css}">
+    <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+<title>NewUser</title>
+</head>
+
+<body>
+
+	<header>
+        <nav>
+            <div >
+                <a href="http://localhost:7007">Home</a>
+                <a href="/adminRegister">New Admin</a>
+                <a href="/adminLog">Existing Admin</a>
+                <a href="/userRegistration">New User</a>
+                <a href="/userLog">Existing User</a>
+                <a href="contact">Contact</a>
+                <a href="nextDonationDate">When I Can Donate</a>
+            </div>
+        </nav>
+    </header>
+    
+
+		<h2>Next Donation Date</h2>
+				<br>
+	<img src="https://cdn-icons-png.flaticon.com/128/1056/1056593.png" class="center">
+	<br>
+
+    <form action="#" th:action="@{/nextDonationDate}" th:object="${Register}" method="post">
+        <label for="usermobile">Mobile Number:</label><br>
+        <input type="text" id="usermobile" name="usermobile" th:field="*{usermobile}"><br>
+        <input type="submit" value="Check">
+    </form>
+    <p th:text="${donationStatus}"></p>
+</body>
+</html>

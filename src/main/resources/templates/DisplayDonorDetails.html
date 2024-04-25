@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Donor Details</title>
+    <link rel="stylesheet" th:href="@{/Displaydonordetails.css}" href="../static/css/style.css">
+    <style>
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 4cm;
+	  height: 4cm;
+	}
+	</style>
+</head>
+
+<body>
+    
+    
+    <nav>
+				<a href="http://localhost:7007">Home</a>
+				<a href="/admin/home">AdminHome</a>
+				<a th:href="@{/DisplayDonorDetails}">DisplayDonorDetails</a>
+				<a th:href="@{/viewBloodStock}">ViewBloodStock</a>
+				<a th:href="@{/supply}">Supply</a>
+				<a th:href="@{/updateDonorDetails}">Update</a>
+				
+	</nav>
+    <h2 align="center">DONOR DETAILS</h2>
+    
+	<img src="https://png.pngtree.com/png-clipart/20220430/original/pngtree-donate-blood-donor-darah-png-image_7599574.png" class="center">
+	
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Mobile number</th>
+                <th>Email Id</th>
+                <th>City</th>
+                <th>Last Donation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="donor : ${donors}">
+                <td th:text="${donor.user_id}"></td>
+                <td th:text="${donor.user_fullname}"></td>
+                <td th:text="${donor.Age}"></td>
+                <td th:text="${donor.Gender}"></td>
+                <td th:text="${donor.BloodGroup}"></td>
+                <td th:text="${donor.usermobile}"></td>
+                <td th:text="${donor.user_email}"></td>
+                <td th:text="${donor.City}"></td>
+                <td th:text="${donor.lastDonationDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
